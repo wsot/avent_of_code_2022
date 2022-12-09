@@ -1,4 +1,3 @@
-import dataclasses
 import pathlib
 import typing as t
 
@@ -19,10 +18,10 @@ def data() -> t.Iterable[str]:
     with pathlib.Path("input.txt").open() as f:
         lineiter = iter(f)
         assert next(lineiter) == "$ cd /\n"  # We don't care about the first line
-        for l in (line.strip() for line in lineiter):
-            if not l:
+        for stripped_line in (line.strip() for line in lineiter):
+            if not stripped_line:
                 continue
-            yield l
+            yield stripped_line
 
 
 def part1(data: t.Iterable[str]) -> int:

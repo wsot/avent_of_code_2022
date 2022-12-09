@@ -9,7 +9,7 @@ def main() -> int:
 
 def input() -> t.Iterable[str]:
     with open("input.txt", "rt") as f:
-        yield from (l.strip() for l in f)
+        yield from (line.strip() for line in f)
 
 
 def part_1(input: t.Iterable[str]) -> int:
