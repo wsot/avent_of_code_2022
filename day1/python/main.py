@@ -1,4 +1,4 @@
-def main():
+def main() -> int:
     elfloads: list[int] = []
     with open("input.txt", "rt") as f:
         elfload: int = 0
@@ -14,7 +14,8 @@ def main():
         elfloads.append(elfload)
 
     print(sum(sorted(elfloads, reverse=True)[:3]))
+    return 0
+
 
 if __name__ == "__main__":
     exit(main())
-

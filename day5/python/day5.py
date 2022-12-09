@@ -20,7 +20,7 @@ def build_stacks(input: t.Iterable[str]) -> list[list[str]]:
     input_iter = iter(input)
     line = next(input_iter)
     stack_count = len(line) // 4
-    stacks = [[] for _ in range(stack_count)]
+    stacks: list[list[str]] = [[] for _ in range(stack_count)]
 
     while True:
         for idx in range(stack_count):

@@ -12,7 +12,7 @@ SCORES = {"A": 1, "B": 2, "C": 3}
 WIN_SCORE = 6
 
 
-def verbose_part_1(lines):
+def verbose_part_1(lines) -> int:
     my_score: int = 0
 
     outcome_map = {}
@@ -42,7 +42,7 @@ def verbose_part_1(lines):
     return my_score
 
 
-def verbose_part_2(lines):
+def verbose_part_2(lines) -> int:
     my_score: int = 0
 
     outcome_map = {}
@@ -66,7 +66,7 @@ def verbose_part_2(lines):
     return my_score
 
 
-def terse_part_1(lines):
+def terse_part_1(lines) -> int:
     return sum(
         1 + x[1] + (3 if x[0] == x[1] else (6 if (((x[1] - x[0]) % 3) == 1) else 0))
         for x in (
@@ -76,7 +76,7 @@ def terse_part_1(lines):
     )
 
 
-def terse_part_2(lines):
+def terse_part_2(lines) -> int:
     results = (
         (ord(x[0]) - ord("A"), ord(x[1]) - ord("X"))
         for x in (line.strip().split(" ") for line in lines)
@@ -84,7 +84,7 @@ def terse_part_2(lines):
     return sum(1 + ((theirs + (wld - 1)) % 3) + (3 * wld) for theirs, wld in results)
 
 
-def main():
+def main() -> int:
     with open("input.txt", "rt") as f:
         lines = f.readlines()
 
@@ -93,6 +93,7 @@ def main():
     print("part 2")
     print(verbose_part_2(lines))
     print(terse_part_2(lines))
+    return 0
 
 
 if __name__ == "__main__":
